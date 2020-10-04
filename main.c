@@ -1,4 +1,3 @@
-
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
@@ -20,7 +19,7 @@ void Initialize()
 
   // Toggle OC1A on compare match
   TCCR1A |= (1<<COM1A0); 
-  OCR1A = 800;  // 1Hz square wave with 50% duty cycle
+  OCR1A = 800;  // 10kHz square wave with 50% duty cycle
 
   // Enable global interrupts
   sei();  
@@ -32,5 +31,3 @@ int main(void)
   Initialize();
   while(1); 
 }
-
-
